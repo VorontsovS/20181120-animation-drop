@@ -1,0 +1,261 @@
+/* for after+befor - Width, Height, Opasity, Top, Left*/
+html {
+  overflow: hidden;
+}
+
+.drop {
+  width: 6vw;
+  height: 6vw;
+  background: #000099;
+  margin: 5vh auto;
+  border-radius: 50% 0% 50% 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-animation: drop 4s linear normal infinite;
+          animation: drop 4s linear normal infinite;
+}
+
+.drop:before, .drop:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 0.5vw solid #000099;
+  opacity: 0;
+  width: 6w;
+  height: 3vw;
+  top: -1.5vw;
+  left: 0vw;
+}
+
+.drop:before {
+  -webkit-animation: dropbefore 4s linear normal infinite;
+          animation: dropbefore 4s linear normal infinite;
+}
+
+.drop:after {
+  -webkit-animation: dropafter 4s linear normal infinite;
+          animation: dropafter 4s linear normal infinite;
+}
+
+@-webkit-keyframes drop {
+  0% {
+  }
+  33% {
+    border-radius: 50% 0% 50% 50%;
+  }
+  34% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  35% {
+    height: 6vw;
+    margin: 70vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  40% {
+    height: 0vw;
+    margin: 76vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  100% {
+    height: 0vw;
+    margin: 76vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+@keyframes drop {
+  0% {
+  }
+  33% {
+    border-radius: 50% 0% 50% 50%;
+  }
+  34% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  35% {
+    height: 6vw;
+    margin: 70vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  40% {
+    height: 0vw;
+    margin: 76vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+  100% {
+    height: 0vw;
+    margin: 76vh auto;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+@-webkit-keyframes dropbefore {
+  0% {
+  }
+  39% {
+    opacity: 0;
+  }
+  40% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0;
+    /*@include ab(6vw, 3vw, 1, -1.5vw, 0);*/
+  }
+  69% {
+    width: 80vw;
+    height: 12vw;
+    opacity: 0;
+    top: -3vw;
+    left: -37vw;
+    /*width: 80vw;
+        height: 12vw;
+        opacity: 0;
+        top: -3vw;
+        left: -37vw;*/
+  }
+  70% {
+    width: 8vw;
+    height: 3vw;
+    opacity: 0;
+    top: -2vw;
+    left: 0vw;
+  }
+  71% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0vw;
+  }
+  100% {
+    width: 80vw;
+    height: 8vw;
+    top: -2vw;
+    left: -37vw;
+  }
+}
+
+@keyframes dropbefore {
+  0% {
+  }
+  39% {
+    opacity: 0;
+  }
+  40% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0;
+    /*@include ab(6vw, 3vw, 1, -1.5vw, 0);*/
+  }
+  69% {
+    width: 80vw;
+    height: 12vw;
+    opacity: 0;
+    top: -3vw;
+    left: -37vw;
+    /*width: 80vw;
+        height: 12vw;
+        opacity: 0;
+        top: -3vw;
+        left: -37vw;*/
+  }
+  70% {
+    width: 8vw;
+    height: 3vw;
+    opacity: 0;
+    top: -2vw;
+    left: 0vw;
+  }
+  71% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0vw;
+  }
+  100% {
+    width: 80vw;
+    height: 8vw;
+    top: -2vw;
+    left: -37vw;
+  }
+}
+
+@-webkit-keyframes dropafter {
+  0% {
+  }
+  54% {
+    opacity: 0;
+  }
+  55% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0vw;
+  }
+  80% {
+    width: 80vw;
+    height: 10vw;
+    opacity: 0;
+    top: -2.5vw;
+    left: -37vw;
+  }
+  100% {
+    width: 80vw;
+    height: 10vw;
+    opacity: 0;
+    top: -2.5vw;
+    left: -37vw;
+  }
+}
+
+@keyframes dropafter {
+  0% {
+  }
+  54% {
+    opacity: 0;
+  }
+  55% {
+    width: 6vw;
+    height: 3vw;
+    opacity: 1;
+    top: -1.5vw;
+    left: 0vw;
+  }
+  80% {
+    width: 80vw;
+    height: 10vw;
+    opacity: 0;
+    top: -2.5vw;
+    left: -37vw;
+  }
+  100% {
+    width: 80vw;
+    height: 10vw;
+    opacity: 0;
+    top: -2.5vw;
+    left: -37vw;
+  }
+}
+/*# sourceMappingURL=main.css.map */

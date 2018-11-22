@@ -1,0 +1,120 @@
+@mixin fordrop ($h: 0vw, $m:76vh) {
+    height: $h;
+    margin: $m auto; 
+    transform: rotate(0deg);
+    border-radius: 50% 50% 50% 50%;
+}
+
+/* for after+befor - Width, Height, Opasity, Top, Left*/
+@mixin forab ($w: 6vw, $h: 3vw, $o: 1, $t: -1.5vw, $l: 0) {
+    width: $w;
+    height: $h;
+    opacity: $o;
+    top: $t;
+    left: $l;
+}
+
+html { 
+    overflow: hidden;
+}
+
+.drop {
+    width: 6vw;
+    height: 6vw;
+    background: #000099;
+    margin: 5vh auto;
+    border-radius: 50% 0% 50% 50%;
+    transform: rotate(-45deg);
+    animation: drop 4s linear normal infinite;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        border: 0.5vw solid #000099;
+        opacity: 0;
+        width: 6w;
+        height: 3vw;
+        top: -1.5vw;
+        left: 0vw;
+    }
+    &:before, &:after {
+        animation: dropbefore dropafter 4s linear normal infinite;
+    }
+}
+
+@keyframes drop {
+    0% {
+    }
+
+    33% {
+        border-radius: 50% 0% 50% 50%;
+    }
+
+    34% {
+        transform: rotate(-45deg);
+        border-radius: 50% 50% 50% 50%;
+    }
+
+    35% {
+        @include fordrop(6vw, 70vh);
+    }
+
+    40% {
+        @include fordrop();
+    }
+
+    100% {
+        @include fordrop();
+    }
+}
+
+@keyframes dropbefore {
+    0% {
+    }
+
+    39% {
+        opacity: 0;
+    }
+    
+    40% {
+        @include ab ();
+    }
+
+    69% {
+        @include ab(80vw, 12vw, 0, -3vw, -37vw);
+    }
+
+    70% {
+        @include ab(8vw, 3vw, 0, -2vw, 0);
+    }
+
+    71% {
+        @include ab();
+    }
+
+    100% {
+        @include ab(80vw, 8vw, 0, -2vw, -37vw);
+    }
+}
+
+@keyframes dropafter {
+    0% {
+    }
+
+    54% {
+        opacity: 0;
+    }
+    
+    55% {
+        @include ab();
+    }
+
+    80% {
+        @include ab(80vw, 10vw, 0, -2.5vw, -37vw);
+    }
+
+    100% {
+        @include ab(80vw, 10vw, 0, -2.5vw, -37vw);
+    }
+}
